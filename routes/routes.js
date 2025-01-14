@@ -43,7 +43,7 @@ router.post("/needs",async (req, res) => {
         if (!nameneeds || !emailneeds  || !need) {
             return res.status(400).json({ error: "All fields are required" });
           }
-      const newNeed = new Need({ name, email, need });
+      const newNeed = new Need({ nameneeds, emailneeds, need });
       await newNeed.save();
       res.status(201).json({ message: 'Need saved successfully' });
     } catch (error) {
