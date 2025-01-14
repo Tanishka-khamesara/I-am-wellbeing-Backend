@@ -39,8 +39,8 @@ router.post("/Account", async (req, res) => {
 
 router.post("/needs",async (req, res) => {
     try {
-        const { name, email, need } = req.body;
-        if (!name || !email  || !need) {
+        const { nameneeds, emailneeds, need } = req.body;
+        if (!nameneeds || !emailneeds  || !need) {
             return res.status(400).json({ error: "All fields are required" });
           }
       const newNeed = new Need({ name, email, need });
